@@ -1,0 +1,92 @@
+---
+import Welcome from '../components/Welcome.astro';
+import Layout from '../layouts/Layout.astro';
+import NAV from '../components/nav.astro';
+import KeepScrolling from '../assets/img/keep-scrolling.svg';
+import './src/styles/global.css'
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout title="principal">
+	<Welcome />
+	<KeepScrolling
+			class="fixed bottom-3 right-0 left-0 mx-auto text-pink-300 drop-shadow-2xl animate-bounce-pulse"
+		/>
+	
+</Layout>
+
+
+<style is:global>
+	@import "tailwindcss";
+
+	
+@font-face {
+	font-family: Oswald-Bold;
+	src: url('../assets/Font/Oswald-Bold.woff2') format('woff2');
+
+    font-display: swap;
+}
+
+@font-face {
+	font-family: Oswald-Light;
+	src: url('../assets/Font/Oswald-Light.woff2') format('woff2');
+
+    font-display: swap;
+}
+
+@font-face {
+	font-family: Oswald-SemiBold;
+	src: url('../assets/Font/Oswald-SemiBold.woff2') format('woff2');
+	font-display: swap;
+}
+
+@font-face {
+	font-family: edo;
+	src: url('../assets/Font/edo.woff2') format('woff2');
+	font-display: swap;
+}
+
+@theme {
+
+		--animate-bounce-pulse: bounce-pulse 2s ease-in-out infinite;
+	}
+
+@keyframes bounce-pulse {
+		0% {
+			transform: translateY(0);
+			scale: 0.8;
+			opacity: 0.8;
+		}
+		50% {
+			transform: translateY(-5px);
+			opacity: 1;
+			scale: 1;
+		}
+		100% {
+			transform: translateY(0);
+			scale: 0.8;
+			opacity: 0.8;
+		}
+	}
+
+a{
+	font-family: Oswald-SemiBold;
+
+}
+h1{
+	font-family: Oswald-Bold;
+}
+	html,
+	body {
+		background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+		height: 300vh;
+		overflow-x: hidden;
+		overscroll-behavior: none;
+		color: white;
+		margin: 0;
+		width: 100%;
+	}
+
+</style>

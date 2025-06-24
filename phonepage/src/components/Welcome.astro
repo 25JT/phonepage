@@ -1,0 +1,128 @@
+---
+import Letras from "../assets/img/Letras.svg";
+import background from "../assets/img/background.jpg";
+---
+
+<div class="fixed top-0 w-full h-screen" id="logo-mask">
+	<section>
+		<picture
+			id="hero-key"
+			class="h-screen scale-125 block overflow-hidden fixed"
+		>
+			<div class="flex justify-center items-center">
+				<img
+					id="logoPrincipal"
+					src={Letras.src}
+					alt=""
+					class="absolute  transform translate-y-[230px] h-[30%]"
+				/>
+			</div>
+
+			<img
+				id="background"
+				src={background.src}
+				alt="background"
+				fetchpriority="high"
+				class="w-screen h-full object-cover"
+			/>
+		</picture>
+	</section>
+</div>
+<div
+	class="fixed flex flex-col items-center justify-between h-screen p-20 py-16 w-full"
+>
+	<header class="flex justify-between w-full">
+		<h1>Logo</h1>
+
+		<h1>menu</h1>
+	</header>
+	<section id="footer-text" class="absolute bottom-8 m-auto">
+		<span
+			class="absolute tracking-[5px] whitespace-nowrap text-center -top-[51px] font-medium text-[25px] text-shadow-[[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 text-lg"
+		>
+			REPARAMOS CON LAS MEJORES HERRAMIENTAS
+		</span>
+	</section>
+</div>
+<div class="fixed flex justify-center items-center h-screen p-20 py-16 w-full ">
+	<section id="secondPart" class="absolute bottom-8 m-auto">
+		<span
+			class="absolute tracking-[5px] whitespace-nowrap text-center -top-[51px] font-medium text-[25px] text-shadow-[[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 text-lg"
+		>
+		
+		</span>
+	</section>
+</div>
+
+
+<style>
+	#logo-mask {
+		background: rgb(255, 255, 255);
+		mask-image: url("../assets/img/Letras.svg");
+		mask-position: center 25%;
+		mask-repeat: no-repeat;
+		mask-size: clamp(9000vh, 3500%, 0vh);
+	}
+</style>
+
+<script>
+	import { gsap } from "gsap";
+
+	import { ScrollTrigger } from "gsap/ScrollTrigger";
+	// ScrollSmoother requires ScrollTrigger
+	import { ScrollSmoother } from "gsap/ScrollSmoother";
+
+	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+	const tl = gsap.timeline({
+		scrollTrigger: {
+			scrub: 1,
+		},
+	});
+
+	tl.to("#hero-key", { duration: 1, scale: 1 });
+
+	tl.to(
+		"#background",
+		{
+			opacity: 0,
+		},
+		"<",
+	);
+	tl.to(
+		"#logoPrincipal",
+		{
+			opacity: 0,
+		},
+		"<",
+	);
+	tl.to(
+		"#footer-text",
+		{
+			opacity: 0,
+		},
+		"<",
+	)
+
+	tl.to(
+		"#logo-mask",
+		{
+			maskSize: "clamp(20vh, 25%, 30vh)",
+			translateY: "-15%",
+		},
+		0.25,
+	)
+	tl.to(
+		"#pruebah1",
+		{
+			opacity: 1,
+		},
+		"<",
+	)
+	tl.to(
+		"#secondPart",
+		{
+		opacity: 1,
+		},
+	"<"
+	)
+</script>
