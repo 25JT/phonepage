@@ -1,141 +1,193 @@
 ---
 import Letras from "../assets/img/Letras.svg";
 import background from "../assets/img/background.jpg";
+import Img1 from "../assets/img/Img1.webp";
 ---
 
 <div class="fixed top-0 w-full h-screen" id="logo-mask">
-	<section>
-		<picture
-			id="hero-key"
-			class="h-screen scale-125 block overflow-hidden fixed"
-		>
-			<div class="flex justify-center items-center">
-				<img
-					id="logoPrincipal"
-					src={Letras.src}
-					alt="logo"
-					class="fixed transform translate-y-[230px] h-[30%] z-10"
-				/>
-			</div>
+  <section>
+    <picture
+      id="hero-key"
+      class="h-screen scale-125 block overflow-hidden fixed"
+    >
+      <div class="flex justify-center items-center">
+        <img
+          id="logoPrincipal"
+          src={Letras.src}
+          alt="logo"
+          class="fixed transform translate-y-[230px] h-[30%] z-10"
+        />
+      </div>
 
-			<img
-				id="background"
-				src={background.src}
-				alt="background"
-				fetchpriority="high"
-				class="w-screen h-full object-cover"
-			/>
-		</picture>
-	</section>
+      <img
+        id="background"
+        src={background.src}
+        alt="background"
+        fetchpriority="high"
+        class="w-screen h-full object-cover"
+      />
+    </picture>
+  </section>
 </div>
 <div
-	class="fixed flex flex-col items-center justify-between h-screen p-20 py-16 w-full z-10"
+  class="z-50 fixed flex flex-col items-center justify-between h-screen p-8 sm:p-16 md:p-20 w-full "
 >
-	<header class="flex justify-between w-full">
-		<h1>Logo</h1>
+  <header class="flex justify-between items-center w-full">
+    <h1 class="text-white text-lg sm:text-xl md:text-2xl"></h1> 	
+	<!-- se pone logo -->
+    <div class="z-50 relative -top-4 sm:-top-6 md:-top-10 left-4 sm:left-10">
+      <button
+        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 z-50 relative"
+        id="hamburger"
+        aria-label="Toggle menu"
+      >
+        <div class="hamburger-icon relative w-6 h-5">
+          <span
+            class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out"
+            id="line1"></span>
+          <span
+            class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-2"
+            id="line2"></span>
+          <span
+            class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-4"
+            id="line3"></span>
+        </div>
+      </button>
 
-		<div class="relative">
-			<button
-				class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 z-50 relative"
-				id="hamburger"
-				aria-label="Toggle menu"
-			>
-				<div class="hamburger-icon relative w-6 h-5">
-					<span
-						class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out"
-						id="line1"></span>
-					<span
-						class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out mt-2"
-						id="line2"></span>
-					<span
-						class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out mt-4"
-						id="line3"></span>
-				</div>
-			</button>
+      <nav
+        class="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+        id="menu"
+      >
+        <ul
+          class="text-center space-y-6 sm:space-y-8 transform -translate-y-4 transition-transform duration-300"
+          id="menu-items"
+        >
+          <li class="opacity-0">
+            <a
+              href="/"
+              class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
+              >Inicio</a
+            >
+          </li>
+          <li class="opacity-0">
+            <a
+              href="/servicios"
+              class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
+              >Servicios</a
+            >
+          </li>
+          <li class="opacity-0">
+            <a
+              href="/contacto"
+              class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
+              >Contacto</a
+            >
+          </li>
+        </ul>
+      </nav>
 
-			<nav
-				class="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
-				id="menu"
-			>
-				<ul
-					class="text-center space-y-8 transform -translate-y-4 transition-transform duration-300"
-					id="menu-items"
-				>
-					<li class="opacity-0">
-						<a
-							href="/"
-							class="text-2xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
-							>Inicio</a
-						>
-					</li>
-					<li class="opacity-0">
-						<a
-							href="/servicios"
-							class="text-2xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
-							>Servicios</a
-						>
-					</li>
-					<li class="opacity-0">
-						<a
-							href="/contacto"
-							class="text-2xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
-							>Contacto</a
-						>
-					</li>
-				</ul>
-			</nav>
-
-			<script></script>
-		</div>
-	</header>
-	<section id="footer-text" class="absolute bottom-8 m-auto">
-		<span
-			class="absolute tracking-[5px] whitespace-nowrap text-center -top-[51px] font-medium text-[25px] text-shadow-[[0_0_2px_rgba(255,255,255,.5),0_0_8px_#000] left-1/2 -translate-x-1/2 text-lg"
-		>
-			REPARAMOS CON LAS MEJORES HERRAMIENTAS
-		</span>
-	</section>
+      <script></script>
+    </div>
+  </header>
+  <section id="footer-text" class="absolute bottom-4 sm:bottom-8 m-auto">
+    <span
+      class="absolute tracking-[3px] sm:tracking-[5px] whitespace-nowrap text-center -top-[40px] sm:-top-[51px] font-medium text-base sm:text-lg md:text-xl text-white left-1/2 -translate-x-1/2"
+    >
+      REPARAMOS CON LAS MEJORES HERRAMIENTAS
+    </span>
+  </section>
 </div>
 <div
-	id="welcome-text"
-	class="col-span-2 text-center justify-center fixed -top-40 gap-[100vh] w-full h-screen flex items-center
- text-4xl font-bold opacity-0 transition-opacity"
+  id="welcome-text"
+  class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-row items-center lg:gap-[50vh] gap-8 px-4
+  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 ease-in-out transition-opacity"
 >
-	<h1>¡Hola!</h1>
-	<div>
-		<h1>REPARACIONES MOVILES</h1>
-		<p class="text-uppercase text-xl">Con las mejores herramientas</p>
-	</div>
+  <img src={Img1.src} alt="img1" />
+  <h1>REPARACIONES MOVILES</h1>
+</div>
+
+
+<div
+id="welcome-text2"
+  class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-col items-center
+  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 transition-opacity"
+>
+  <h1>Trabajo 100%</h1>
+  <h1>Calidad 100%</h1>
 </div>
 
 <div
-	id=""
-	class="col-span-2 text-center justify-center fixed top-0 gap-[100vh] w-full h-screen flex items-center
- text-4xl font-bold opacity-0 transition-opacity"
+  id="welcome-text3"
+  class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-row items-center lg:gap-[50vh] gap-8 px-4
+  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 ease-in-out transition-opacity"
 >
-	<h1>sss!</h1>
-	<h1>¡Hosaxla!2</h1>
+  <img src={Img1.src} alt="img1" />
+  <h1>Nos Ubicamos en cali colombia</h1>
 </div>
+
+<div
+id="welcome-text4"
+  class="z-50 col-span-2 text-center justify-center fixed left-1/2 w-3xl transform -translate-x-1/2 h-screen flex flex-col items-center
+  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 transition-opacity"
+>
+  
+<button
+  id="contact-btn"
+  class=" bg-transparent border-2 border-white px-4 py-2 rounded-md text-white hover:bg-white hover:text-black transition-colors duration-200"
+>
+  Contactanos
+</button>
+
+<form
+  id="form"
+  class="fixed top-0 w-full h-screen bg-black bg-opacity-50 backdrop-blur-sm z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+>
+  <div class="bg-white p-6 rounded-md">
+    <h2 class="text-2xl font-bold mb-4">Contactanos</h2>
+    <input
+      type="text"
+      placeholder="Nombre"
+      class="block w-full px-4 py-2 mb-4 text-black"
+    />
+    <input
+      type="email"
+      placeholder="Correo"
+      class="block w-full px-4 py-2 mb-4 text-black"
+    />
+    <textarea
+      placeholder="Mensaje"
+      class="block w-full px-4 py-2 mb-4 text-black"
+    ></textarea>
+    <button
+      type="submit"
+      class="bg-black text-white px-4 py-2 rounded-md"
+    >
+      Enviar
+    </button>
+  </div>
+</form>
+
+
 
 <style>
-	#logo-mask {
-		background: rgb(255, 255, 255);
-		mask-image: url("../assets/img/Letras.svg");
-		mask-position: center 25%;
-		mask-repeat: no-repeat;
-		mask-size: clamp(9000vh, 3500%, 0vh);
-	}
-	#logoPrincipal {
-		opacity: 0;
-		visibility: hidden;
-		transition:
-			opacity 0.5s ease,
-			visibility 0.5s;
-	}
-	#logo-mask.ready #logoPrincipal {
-		opacity: 1;
-		visibility: visible;
-	}
+  #logo-mask {
+    background: rgb(255, 255, 255);
+    mask-image: url("../assets/img/Letras.svg");
+    mask-position: center 25%;
+    mask-repeat: no-repeat;
+    mask-size: clamp(9000vh, 3500%, 0vh);
+  }
+  #logoPrincipal {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.5s ease,
+      visibility 0.5s;
+  }
+  #logo-mask.ready #logoPrincipal {
+    opacity: 1;
+    visibility: visible;
+  }
 </style>
 
 <script>
@@ -149,7 +201,7 @@ import background from "../assets/img/background.jpg";
 	});
 
 	import { gsap } from "gsap";
-
+	import Lenis from '@studio-freight/lenis';
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
 	// ScrollSmoother requires ScrollTrigger
 	import { ScrollSmoother } from "gsap/ScrollSmoother";
@@ -160,6 +212,37 @@ import background from "../assets/img/background.jpg";
 			scrub: 1,
 		},
 	});
+
+	//lenis
+	const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  smoothTouch: false,
+  touchMultiplier: 2,
+});
+
+// Función para actualizar en cada frame
+function raf(time) {
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+
+// Iniciar la animación
+requestAnimationFrame(raf);
+
+// Integrar con GSAP ScrollTrigger
+lenis.on('scroll', ScrollTrigger.update);
+
+// Hacer que ScrollTrigger use estos eventos de Lenis
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+
+gsap.ticker.lagSmoothing(0);
+	///
 
 	//animacion  menu boton
 	document.addEventListener("DOMContentLoaded", () => {
@@ -251,6 +334,24 @@ import background from "../assets/img/background.jpg";
 			}
 		});
 	});
+	/// footer
+	document.getElementById("contact-btn").addEventListener("click", () => {
+    gsap.to("#form", {
+      opacity: 1,
+      pointerEvents: "auto",
+      duration: 0.3,
+    });
+  });
+
+  document.getElementById("form").addEventListener("click", (e) => {
+    if (e.target === document.getElementById("form")) {
+      gsap.to("#form", {
+        opacity: 0,
+        pointerEvents: "none",
+        duration: 0.3,
+      });
+    }
+  });
 
 	///
 	//animacion principal
@@ -299,6 +400,60 @@ import background from "../assets/img/background.jpg";
 
 	tl.to(
 		"#welcome-text",
+		{
+			opacity: 0,
+		},
+		">-0.1",
+	);
+
+	tl.to(
+		"#welcome-text2",
+		{
+			delay:0.4,
+			
+			opacity: 1,
+		},
+		"<",
+	);
+
+	tl.to(
+		"#welcome-text2",
+		{
+			opacity: 0,
+		},
+		">-0.1",
+	);
+
+	tl.to(
+		"#welcome-text3",
+		{
+			delay:0.4,
+			
+			opacity: 1,
+		},
+		"<",
+	);
+
+	tl.to(
+		"#welcome-text3",
+		{
+			opacity: 0,
+		},
+		">-0.1",
+	);
+	
+	tl.to(
+		"#welcome-text4",
+		{
+			delay:0.4,
+			
+			opacity: 1,
+		},
+		"<",
+	);
+
+	tl.to(
+		"#welcome-text4",
 		{
 			opacity: 0,
 		},
