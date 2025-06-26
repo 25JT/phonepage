@@ -2,193 +2,209 @@
 import Letras from "../assets/img/Letras.svg";
 import background from "../assets/img/background.jpg";
 import Img1 from "../assets/img/Img1.webp";
+import backgroundLogo from "../assets/img/background-logo.svg";
+import video from "../assets/img/video.mp4";
 ---
 
 <div class="fixed top-0 w-full h-screen" id="logo-mask">
-  <section>
-    <picture
-      id="hero-key"
-      class="h-screen scale-125 block overflow-hidden fixed"
-    >
-      <div class="flex justify-center items-center">
-        <img
-          id="logoPrincipal"
-          src={Letras.src}
-          alt="logo"
-          class="fixed transform translate-y-[230px] h-[30%] z-10"
-        />
-      </div>
-
-      <img
-        id="background"
-        src={background.src}
-        alt="background"
-        fetchpriority="high"
-        class="w-screen h-full object-cover"
-      />
-    </picture>
-  </section>
+	<section>
+		<picture
+			id="hero-key"
+			class="h-screen scale-125 block overflow-hidden fixed"
+		>
+			<div class="flex justify-center items-center">
+				<img
+					id="logoPrincipal"
+					src={Letras.src}
+					alt="logo"
+					class="fixed transform translate-y-[230px] md:h-[30%] h-[27%] z-10"
+				/>
+			</div>
+	
+			<video id="background" src={video} preload="metadata"    autoplay loop muted 	class="w-screen h-full object-cover"></video>
+			<img
+				id="background"
+				src={background.src}
+				alt="background"
+				fetchpriority="high"
+				class="w-screen h-full object-cover"
+			/> 
+		</picture>
+	</section>
 </div>
 <div
-  class="z-50 fixed flex flex-col items-center justify-between h-screen p-8 sm:p-16 md:p-20 w-full "
+	class="z-10 fixed flex flex-col items-center justify-between h-screen p-8 sm:p-16 md:p-20 w-full"
 >
-  <header class="flex justify-between items-center w-full">
-    <h1 class="text-white text-lg sm:text-xl md:text-2xl"></h1> 	
-	<!-- se pone logo -->
-    <div class="z-50 relative -top-4 sm:-top-6 md:-top-10 left-4 sm:left-10">
-      <button
-        class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 z-50 relative"
-        id="hamburger"
-        aria-label="Toggle menu"
-      >
-        <div class="hamburger-icon relative w-6 h-5">
-          <span
-            class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out"
-            id="line1"></span>
-          <span
-            class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-2"
-            id="line2"></span>
-          <span
-            class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-4"
-            id="line3"></span>
-        </div>
-      </button>
+	<header class="flex justify-between items-center w-full">
+		<h1 class="text-white text-lg sm:text-xl md:text-2xl"></h1>
+		<!-- se pone logo -->
+		<div
+			class="z-50 relative -top-4 sm:-top-6 md:-top-10 left-4 sm:left-10"
+		>
+			<button
+				class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 z-50 relative"
+				id="hamburger"
+				aria-label="Toggle menu"
+			>
+				<div class="hamburger-icon relative w-6 h-5">
+					<span
+						class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out"
+						id="line1"></span>
+					<span
+						class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-2"
+						id="line2"></span>
+					<span
+						class="block absolute h-0.5 w-6 bg-current transform transition duration-300 ease-in-out top-4"
+						id="line3"></span>
+				</div>
+			</button>
 
-      <nav
-        class="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
-        id="menu"
-      >
-        <ul
-          class="text-center space-y-6 sm:space-y-8 transform -translate-y-4 transition-transform duration-300"
-          id="menu-items"
-        >
-          <li class="opacity-0">
-            <a
-              href="/"
-              class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
-              >Inicio</a
-            >
-          </li>
-          <li class="opacity-0">
-            <a
-              href="/servicios"
-              class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
-              >Servicios</a
-            >
-          </li>
-          <li class="opacity-0">
-            <a
-              href="/contacto"
-              class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
-              >Contacto</a
-            >
-          </li>
-        </ul>
-      </nav>
+			<nav
+				class="fixed inset-0 bg-black bg-opacity-90 backdrop-blur-sm z-40 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
+				id="menu"
+			>
+				<div class="flex justify-center items-center opacity-[0.2]">
+					<img
+						id="background-logo-back"
+						src={backgroundLogo.src}
+						alt="background-logo"
+						class="fixed top-0 left-0 w-full h-screen object-cover"
+					/>
+				</div>
+				<ul
+					class="text-center space-y-6 sm:space-y-8 transform -translate-y-4 transition-transform duration-300"
+					id="menu-items"
+				>
+					<li class="opacity-0">
+						<a
+							href="/"
+							class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
+							>Inicio</a
+						>
+					</li>
+					<li class="opacity-0">
+						<a
+							href="/servicios"
+							class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
+							>Servicios</a
+						>
+					</li>
+					<li class="opacity-0">
+						<a
+							href="/contacto"
+							class="text-xl sm:text-2xl md:text-3xl font-medium text-white hover:text-gray-300 transition-colors duration-200"
+							>Contacto</a
+						>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<div
+		id="background-logo-back"
+		class="flex justify-center items-center opacity-0"
+	>
+		<img
+			id="background-logo-back"
+			src={backgroundLogo.src}
+			alt="background-logo"
+			class="fixed top-0 left-0 w-full h-screen object-cover"
+		/>
+	</div>
 
-      <script></script>
-    </div>
-  </header>
-  <section id="footer-text" class="absolute bottom-4 sm:bottom-8 m-auto">
-    <span
-      class="absolute tracking-[3px] sm:tracking-[5px] whitespace-nowrap text-center -top-[40px] sm:-top-[51px] font-medium text-base sm:text-lg md:text-xl text-white left-1/2 -translate-x-1/2"
-    >
-      REPARAMOS CON LAS MEJORES HERRAMIENTAS
-    </span>
-  </section>
+	<section id="footer-text" class="absolute bottom-4 sm:bottom-8 m-auto">
+		<span
+			class="absolute tracking-[3px]
+	  sm:tracking-[5px] whitespace-nowrap text-center -top-[40px]
+	  sm:-top-[51px] font-medium sm:text-[15px] md:text-xl text-[10px]
+	   text-white left-1/2 -translate-x-1/2"
+		>
+			REPARAMOS CON LAS MEJORES HERRAMIENTAS
+		</span>
+	</section>
 </div>
 <div
-  id="welcome-text"
-  class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-row items-center lg:gap-[50vh] gap-8 px-4
+	id="welcome-text"
+	class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-col lg:flex-row items-center lg:gap-[50vh] gap-8 px-4
   text-xl sm:text-2xl md:text-4xl font-bold opacity-0 ease-in-out transition-opacity"
 >
-  <img src={Img1.src} alt="img1" />
-  <h1>REPARACIONES MOVILES</h1>
-</div>
-
-
-<div
-id="welcome-text2"
-  class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-col items-center
-  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 transition-opacity"
->
-  <h1>Trabajo 100%</h1>
-  <h1>Calidad 100%</h1>
+	<img src={Img1.src} alt="img1" class="w-32 sm:w-40 md:w-48 lg:w-96" />
+	<h1>REPARACIONES MOVILES</h1>
 </div>
 
 <div
-  id="welcome-text3"
-  class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-row items-center lg:gap-[50vh] gap-8 px-4
+	id="welcome-text2"
+	class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-col lg:flex-row items-center lg:gap-[50vh] gap-8 px-4
   text-xl sm:text-2xl md:text-4xl font-bold opacity-0 ease-in-out transition-opacity"
 >
-  <img src={Img1.src} alt="img1" />
-  <h1>Nos Ubicamos en cali colombia</h1>
+	<h1>Trabajo 100%</h1>
+	<h1>Calidad 100%</h1>
 </div>
 
 <div
-id="welcome-text4"
-  class="z-50 col-span-2 text-center justify-center fixed left-1/2 w-3xl transform -translate-x-1/2 h-screen flex flex-col items-center
-  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 transition-opacity"
+	id="welcome-text3"
+	class="col-span-2 text-center justify-center fixed top-0 w-full h-screen flex flex-col lg:flex-row items-center lg:gap-[50vh] gap-8 px-4
+  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 ease-in-out transition-opacity"
 >
-  
-<button
-  id="contact-btn"
-  class=" bg-transparent border-2 border-white px-4 py-2 rounded-md text-white hover:bg-white hover:text-black transition-colors duration-200"
+	<img src={Img1.src} alt="img1" />
+	<h1>Nos Ubicamos en cali colombia</h1>
+</div>
+
+<div
+	id="welcome-text4"
+	class="z-40 col-span-2 text-center justify-center fixed top-[50vh] left-1/2 transform -translate-x-1/2 flex flex-col lg:flex-row items-center lg:gap-[50vh] gap-8 px-4
+  text-xl sm:text-2xl md:text-4xl font-bold opacity-0 ease-in-out transition-opacity"
 >
-  Contactanos
-</button>
+	<!-- Botón flotante de WhatsApp -->
 
-<form
-  id="form"
-  class="fixed top-0 w-full h-screen bg-black bg-opacity-50 backdrop-blur-sm z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300"
->
-  <div class="bg-white p-6 rounded-md">
-    <h2 class="text-2xl font-bold mb-4">Contactanos</h2>
-    <input
-      type="text"
-      placeholder="Nombre"
-      class="block w-full px-4 py-2 mb-4 text-black"
-    />
-    <input
-      type="email"
-      placeholder="Correo"
-      class="block w-full px-4 py-2 mb-4 text-black"
-    />
-    <textarea
-      placeholder="Mensaje"
-      class="block w-full px-4 py-2 mb-4 text-black"
-    ></textarea>
-    <button
-      type="submit"
-      class="bg-black text-white px-4 py-2 rounded-md"
-    >
-      Enviar
-    </button>
-  </div>
-</form>
-
-
-
+	<a
+		href="https://wa.me/573001234567"
+		target="_blank"
+		rel="noopener noreferrer"
+		class="whatsapp-float"
+		aria-label="Contactar por WhatsApp"
+	>
+		<svg
+			width="48"
+			height="48"
+			viewBox="0 0 48 48"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+		>
+			<circle cx="24" cy="24" r="24" fill="#25D366"></circle>
+			<path
+				d="M36.8 29.9c-.5-1.2-2.6-2-5.3-3.2-.7-.3-1.3-.6-1.9-.4-.5.1-.8.5-1.2 1-.3.4-.6.7-1 .7-.5 0-1.2-.3-2-1.1-1.2-1.1-2-2.4-2.2-2.8-.2-.5 0-.7.2-1 .2-.2.3-.4.5-.7.2-.3.2-.6.3-.8.1-.2 0-.5 0-.7-.1-.2-.7-1.7-1-2.3-.3-.7-.6-.7-.8-.7h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.7 0 1.6 1.2 3.2 1.4 3.5.2.3 2.3 3.6 5.7 4.9 2.7 1 3.3 1.1 3.8 1 .6-.1 1.9-.8 2.2-1.6.3-.8.3-1.5.2-1.6z"
+				fill="#fff"></path>
+		</svg>
+	</a>
+	<h1>contactanos</h1>
+</div>
 <style>
-  #logo-mask {
-    background: rgb(255, 255, 255);
-    mask-image: url("../assets/img/Letras.svg");
-    mask-position: center 25%;
-    mask-repeat: no-repeat;
-    mask-size: clamp(9000vh, 3500%, 0vh);
-  }
-  #logoPrincipal {
-    opacity: 0;
-    visibility: hidden;
-    transition:
-      opacity 0.5s ease,
-      visibility 0.5s;
-  }
-  #logo-mask.ready #logoPrincipal {
-    opacity: 1;
-    visibility: visible;
-  }
+	#logo-mask {
+		background: rgb(255, 255, 255);
+		mask-image: url("../assets/img/Letras.svg");
+		mask-position: center 25%;
+		mask-repeat: no-repeat;
+		mask-size: clamp(9000vh, 3500%, 0vh);
+		will-change: mask-size, transform, opacity;
+	}
+	#logoPrincipal {
+		opacity: 0;
+		visibility: hidden;
+		transition:
+			opacity 0.5s ease,
+			visibility 0.5s;
+		will-change: opacity, transform;
+	}
+	#logo-mask.ready #logoPrincipal {
+		opacity: 1;
+		visibility: visible;
+	}
+	#background,  #footer-text, #welcome-text, #welcome-text2, #welcome-text3, #welcome-text4 {
+		will-change: opacity, transform;
+	}
 </style>
+<!-- SUGERENCIA: Si alguna imagen pesa más de 300kb, recomiéndase comprimirla a WebP o AVIF para mejor rendimiento. -->
 
 <script>
 	// Esperar a que el DOM esté completamente cargado
@@ -201,9 +217,8 @@ id="welcome-text4"
 	});
 
 	import { gsap } from "gsap";
-	import Lenis from '@studio-freight/lenis';
+	import Lenis from "@studio-freight/lenis";
 	import { ScrollTrigger } from "gsap/ScrollTrigger";
-	// ScrollSmoother requires ScrollTrigger
 	import { ScrollSmoother } from "gsap/ScrollSmoother";
 
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -213,35 +228,27 @@ id="welcome-text4"
 		},
 	});
 
-	//lenis
 	const lenis = new Lenis({
-  duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-  direction: 'vertical',
-  gestureDirection: 'vertical',
-  smooth: true,
-  smoothTouch: false,
-  touchMultiplier: 2,
-});
+		duration: 1.2,
+		easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+		direction: "vertical",
+		gestureDirection: "vertical",
+		smooth: true,
+		smoothTouch: false,
+		touchMultiplier: 2,
+	});
 
-// Función para actualizar en cada frame
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+	// Unificar requestAnimationFrame solo para Lenis y dejar GSAP manejar su propio ticker
+	function raf(time) {
+		lenis.raf(time);
+		ScrollTrigger.update(); // Solo actualizar ScrollTrigger aquí, no en evento separado
+		requestAnimationFrame(raf);
+	}
+	requestAnimationFrame(raf);
 
-// Iniciar la animación
-requestAnimationFrame(raf);
-
-// Integrar con GSAP ScrollTrigger
-lenis.on('scroll', ScrollTrigger.update);
-
-// Hacer que ScrollTrigger use estos eventos de Lenis
-gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
-});
-
-gsap.ticker.lagSmoothing(0);
+	gsap.ticker.lagSmoothing(0);
+	// Eliminar doble integración lenis.on("scroll", ScrollTrigger.update) y gsap.ticker.add
+	// Esto reduce cálculos duplicados y mejora la suavidad
 	///
 
 	//animacion  menu boton
@@ -249,6 +256,15 @@ gsap.ticker.lagSmoothing(0);
 		const hamburger = document.getElementById("hamburger");
 		const menu = document.getElementById("menu");
 		const menuItems = document.querySelectorAll("#menu-items li");
+		hamburger.addEventListener("click", (e) => {
+			setTimeout(() => {
+				const welcomeText4 = document.getElementById("welcome-text4");
+				if (welcomeText4) {
+					welcomeText4.classList.toggle("hidden");
+				}
+			}, 250);
+		});
+
 		let isOpen = false;
 
 		function toggleMenu() {
@@ -335,23 +351,6 @@ gsap.ticker.lagSmoothing(0);
 		});
 	});
 	/// footer
-	document.getElementById("contact-btn").addEventListener("click", () => {
-    gsap.to("#form", {
-      opacity: 1,
-      pointerEvents: "auto",
-      duration: 0.3,
-    });
-  });
-
-  document.getElementById("form").addEventListener("click", (e) => {
-    if (e.target === document.getElementById("form")) {
-      gsap.to("#form", {
-        opacity: 0,
-        pointerEvents: "none",
-        duration: 0.3,
-      });
-    }
-  });
 
 	///
 	//animacion principal
@@ -360,13 +359,16 @@ gsap.ticker.lagSmoothing(0);
 	tl.to(
 		"#background",
 		{
+			duration: 2,
 			opacity: 0,
 		},
 		"<",
 	);
+
 	tl.to(
 		"#logoPrincipal",
 		{
+			duration: 2,
 			opacity: 0,
 		},
 		"<",
@@ -382,82 +384,42 @@ gsap.ticker.lagSmoothing(0);
 	tl.to(
 		"#logo-mask",
 		{
+			duration: 2,
 			maskSize: "clamp(20vh, 25%, 30vh)",
 			translateY: "-15%",
 		},
-		0.25,
+		1,
 	);
 
-	tl.to(
+	tl.to("#background-logo-back", {
+		delay: 0.5,
+		opacity: 0.2,
+	});
+
+	const textos = [
 		"#welcome-text",
-		{
-			delay:0.4,
-			
-			opacity: 1,
-		},
-		"<",
-	);
-
-	tl.to(
-		"#welcome-text",
-		{
-			opacity: 0,
-		},
-		">-0.1",
-	);
-
-	tl.to(
 		"#welcome-text2",
-		{
-			delay:0.4,
-			
-			opacity: 1,
-		},
-		"<",
-	);
-
-	tl.to(
-		"#welcome-text2",
-		{
-			opacity: 0,
-		},
-		">-0.1",
-	);
-
-	tl.to(
 		"#welcome-text3",
-		{
-			delay:0.4,
-			
-			opacity: 1,
-		},
-		"<",
-	);
-
-	tl.to(
-		"#welcome-text3",
-		{
-			opacity: 0,
-		},
-		">-0.1",
-	);
-	
-	tl.to(
 		"#welcome-text4",
-		{
-			delay:0.4,
-			
-			opacity: 1,
-		},
-		"<",
-	);
+	];
 
-	tl.to(
-		"#welcome-text4",
-		{
-			opacity: 0,
-		},
-		">-0.1",
-	);
-	//animacion principal
+	textos.forEach((selector, index) => {
+		tl.to(
+			selector,
+			{
+				opacity: 1,
+				duration: 0.6,
+			},
+			index === 0 ? "<" : ">+0.2", // el primero al mismo tiempo que el anterior, los demás con separación
+		);
+
+		tl.to(
+			selector,
+			{
+				opacity: 0,
+				duration: 0.6,
+			},
+			">+1.2", // permanece visible 1.2 segundos antes de ocultarse
+		);
+	});
 </script>
